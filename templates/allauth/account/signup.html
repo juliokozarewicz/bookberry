@@ -1,0 +1,69 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar</title>
+    <style>
+
+        * {
+            margin: 0;
+            margin-top: 1vh;
+            padding: 0;
+            box-sizing: border-box; /* Isso é opcional, mas geralmente recomendado */
+        }
+
+        #id_password_helptext, #id_remember  {
+            display: none;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 0vh;
+            margin: 0vh;
+        };
+
+    </style>
+</head>
+
+
+{% load i18n %}
+{% load allauth account %}
+
+
+{% block content %}
+
+<div style="width: 100%; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <h1 style="font-size: 3vh;"> DESCULPE, NÃO DEU TEMPO DE ESTILIZAR </h1>
+    <h3>--------------------------------------------------------------</h3>
+
+    {% element h1 %}
+        {% trans "Cadastre-se" %}
+    {% endelement %}
+    <p>
+        {% blocktrans %}Já possui uma conta? <a href="{{ login_url }}">entrar</a>.{% endblocktrans %}
+    </p>
+    {% url 'account_signup' as action_url %}
+    {% element form form=form method="post" action=action_url tags="entrance,signup" %}
+        {% slot body %}
+            {% csrf_token %}
+            {% element fields form=form unlabeled=True %}
+            {% endelement %}
+            {% if redirect_field_value %}
+                <input type="hidden"
+                       name="{{ redirect_field_name }}"
+                       value="{{ redirect_field_value }}" />
+            {% endif %}
+        {% endslot %}
+        {% slot actions %}
+            {% element button tags="prominent,signup" type="submit" %}
+                {% trans "Sign Up" %}
+            {% endelement %}
+        {% endslot %}
+    {% endelement %}
+    {% if SOCIALACCOUNT_ENABLED %}
+        {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
+    {% endif %}
+{% endblock content %}
+<h3>--------------------------------------------------------------</h3>

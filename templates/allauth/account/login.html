@@ -1,0 +1,63 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrar</title>
+    <style>
+
+        #id_password_helptext, #id_remember  {
+            display: none;
+        }
+
+        label[for="id_remember"] {
+            display: none;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        };
+    </style>
+</head>
+
+
+{% load i18n %}
+{% load allauth account %}
+
+
+{% block content %}
+
+<div style="width: 100%; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <h1 style="font-size: 3vh;"> DESCULPE, NÃO DEU TEMPO DE ESTILIZAR </h1>
+    <h3>--------------------------------------------------------------</h3>
+
+    {% url 'account_login' as login_url %}
+    {% element form form=form method="post" action=login_url tags="entrance,login" %}
+        {% slot body %}
+            {% csrf_token %}
+            {% element fields form=form unlabeled=True %}
+            {% endelement %}
+            {% if redirect_field_value %}
+                <input type="hidden"
+                       name="{{ redirect_field_name }}"
+                       value="{{ redirect_field_value }}" />
+            {% endif %}
+        {% endslot %}
+        {% slot actions %}
+            {% element button type="submit" tags="prominent,login" %}
+                {% trans "Entrar" %}
+            {% endelement %}
+        {% endslot %}
+    {% endelement %}
+
+    <p>
+        {% blocktrans %}Se você não possui uma conta, por favor
+    <a href="{{ signup_url }}">cadastre-se</a> antes.{% endblocktrans %}
+    </p>
+
+    <h3>--------------------------------------------------------------</h3>
+</div>
+
+
+{% endblock content %}
