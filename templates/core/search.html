@@ -13,9 +13,134 @@
 
     <img id="logoimg" src="{% static '/core/images/logo.svg' %}" />
 
-    <button id="siginbtn">entrar</button>
+    <button id="addmore">Adicionar Livro</button>
 
-    <button id="register">Ainda não é membro? Cadastre-se!</button>
+    <input type="text" id="inputsearch" placeholder="Pesquisar (nome, data de lançamento, ISBN ou autor)" >
+
+    <p id="textbbok">Acervo de livros</p>
+
+    <div id="frameallbooks">
+        
+        <div id="framecab">
+            <div>Nome</div>
+            <div>Lançamento</div>
+            <div>ISBN</div>
+            <div>Autor</div>
+        </div>
+
+
+
+
+
+
+        <div class="searchclass" id="framcontent">
+            <p>Nodfg re dfgme</p>
+            <p>01-3-2022</p>
+            <p>23423432432432</p>
+            <p>werwer wer wer werwer</p>
+        </div>
+        
+        <div class="searchclass" id="framcontent">
+            <p>Nodfg re dfgme</p>
+            <p>01-3-2022</p>
+            <p>22222</p>
+            <p>werwer wer wer werwer</p>
+        </div>
+
+        <div class="searchclass" id="framcontent">
+            <p>Nodfg re dfgme</p>
+            <p>01-3-2022</p>
+            <p>23423432432432</p>
+            <p>werwer wer wer werwer</p>
+        </div>
+
+        <div class="searchclass" id="framcontent">
+            <p>Nodfg re dfgme</p>
+            <p>01-3-2022</p>
+            <p>23423432432432</p>
+            <p>werwer wer wer werwer</p>
+        </div>
+
+        <div class="searchclass" id="framcontent">
+            <p>Nodfg re dfgme</p>
+            <p>01-3-2022</p>
+            <p>23423432432432</p>
+            <p>werwer wer wer werwer</p>
+        </div>
+
+        <div class="searchclass" id="framcontent">
+            <p>Nodfg re dfgme</p>
+            <p>01-3-2022</p>
+            <p>23423432432432</p>
+            <p>werwer wer wer werwer</p>
+        </div>
+
+        <div class="searchclass" id="framcontent">
+            <p>Julio Kozarewicz</p>
+            <p>01-3-2029</p>
+            <p>11111</p>
+            <p>xxx</p>
+        </div>
+
+        <div class="searchclass" id="framcontent">
+            <p>Julio Kozarewicz</p>
+            <p>01-3-2029</p>
+            <p>11111</p>
+            <p>xxx</p>
+        </div>
+
+        <div class="searchclass" id="framcontent">
+            <p>Nodfg re dfgme</p>
+            <p>01-3-2022</p>
+            <p>23423432432432</p>
+            <p>werwer wer wer werwer</p>
+        </div>
+
+        <div class="searchclass" id="framcontent">
+            <p>Nodfg re dfgme</p>
+            <p>01-3-2022</p>
+            <p>23423432432432</p>
+            <p>werwer wer wer werwer</p>
+        </div>
+
+        <div class="searchclass" id="framcontent">
+            <p>Nodfg re dfgme</p>
+            <p>01-3-2022</p>
+            <p>23423432432432</p>
+            <p>werwer wer wer werwer</p>
+        </div>
+
+
+
+
+
+
+    
+    </div>
+
+    <script>
+        function setupTextFilter(inputId, itemClassName) {
+            const inputFilter = document.getElementById(inputId);
+            const itemElements = document.getElementsByClassName(itemClassName);
+
+            inputFilter.addEventListener('input', function () {
+                const filterText = inputFilter.value.toLowerCase();
+
+                for (const item of itemElements) {
+                    const itemText = item.textContent.toLowerCase();
+                    const shouldDisplay = itemText.includes(filterText);
+
+                    if (shouldDisplay) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        setupTextFilter('inputsearch', 'searchclass');
+    </script>
 
 </body>
 </html>

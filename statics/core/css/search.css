@@ -20,7 +20,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: start;
 }
 
 /* desktop */
@@ -35,14 +35,17 @@ body {
 }
 
 #logoimg {
-	width: 16vh;
-	height: 16vh;
+	margin-top: 8vh;
+
+	width: 12vh;
+	height: 12vh;
 }
 
-#siginbtn {
-	margin-top: 3vh;
-	width: 30vh;
-	height: 5vh;
+#addmore {
+	margin-top: 2vh;
+
+	width: 25vh;
+	height: 4vh;
 
 	background-color: var(--green);
 
@@ -51,18 +54,16 @@ body {
 	cursor: pointer;
 
 	font-family: title;
-	font-size: 3vh;
+	font-size: 2.5vh;
 }
 
-#siginbtn:hover {
+#addmore:hover {
 	opacity: 80%;
 }
 
 #register {
+	margin-top: 2vh;
 	all: initial;
-
-	position: absolute;
-	bottom: 5vh;
 
 	background-color: none;
 
@@ -77,4 +78,83 @@ body {
 
 #register:hover {
 	opacity: 80%;
+}
+
+#inputsearch {
+	margin-top: 3vh;
+
+	width: 70vh;
+	height: 5vh;
+
+	background-color: none;
+
+	padding-left: 2vh;
+	padding-right: 2vh;
+
+	font-family: title;
+	font-size: 2.8vh;
+
+	border-radius: 2vh;
+}
+
+#textbbok {
+	margin-top: 10vh;
+	font-family: title;
+	font-size: 2.5vh;
+}
+
+#frameallbooks {
+	margin-top: 5vh;
+	width: 100%;
+	flex: 1;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: start;
+}
+
+#framecab {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	gap: 5vh;
+
+	font-family: title;
+	font-size: 2.5vh;
+
+	color: var(--gray4);
+}
+
+#framecab div {
+	width: 30vh;
+	display: flex;
+	align-items: start;
+	justify-content: start;
+}
+
+#framcontent {
+	margin-top: 2vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	gap: 5vh;
+
+	font-family: title;
+	font-size: 2.5vh;
+
+	color: var(--black);
+
+	border-bottom: 0.1vh solid var(--gray4);
+}
+
+#framcontent p {
+	width: 30vh;
+
+	text-align: start;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
