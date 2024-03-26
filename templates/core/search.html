@@ -12,15 +12,12 @@
 </head>
 
 {% block content %}
-    <div id="pinkbar"></div>
 
-    <img id="logoimg" src="{% static '/core/images/logo.svg' %}" />
+    <section>
 
-    <button onclick="location.href='/insert'" id="addmore">Adicionar Livro</button>
+    <p id="textbbok">Olá, {{ user.username }}! O seu acervo possui um total de {{total_books}} livros.</p>
 
     <input type="text" id="inputsearch" placeholder="Pesquisar (nome, data de lançamento, ISBN ou autor)" >
-
-    <p id="textbbok">Acervo de livros</p>
 
     <div id="frameallbooks">
         
@@ -41,6 +38,7 @@
         {% endfor %}
 
     </div>
+    </section>
 
     <script>
         function setupTextFilter(inputId, itemClassName) {

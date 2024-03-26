@@ -1,52 +1,53 @@
+{% extends 'core/base.html' %}
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+    {% block htmlhead %}
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static '/core/css/insert.css' %}">
     <title>[ Bookberry]  - Inserir Livro</title>
+    {% endblock htmlhead %}
 </head>
-<body>
 
-    <div id="pinkbar"></div>
+{% block content %}
 
-    <img id="logoimg" src="{% static '/core/images/logo.svg' %}" />
+    <section>
 
-    <button onclick="location.href='/search'" id="addmore">Pesquisar Livro</button>
+        <form action="{% url 'core:insert' %}" method="post" id="forminsert">
+            {% csrf_token %}
+            
+            <p id="textbbok">Inserir Livro no Acervo</p>
 
-    <form action="{% url 'core:insert' %}" method="post" id="forminsert">
-        {% csrf_token %}
-        
-        <p id="textbbok">Inserir Livro no Acervo</p>
-
-        <div class="fieldform">
-            <p class="titlefield">Nome do Livro:</p>
-            {{form.bookname}}
-        </div>
+            <div class="fieldform">
+                <p class="titlefield">Nome do Livro:</p>
+                {{form.bookname}}
+            </div>
 
 
-        <div class="fieldform">
-            <p class="titlefield">Data de lançamento:</p>
-            {{form.dateRelease}}
-        </div>
+            <div class="fieldform">
+                <p class="titlefield">Data de lançamento:</p>
+                {{form.dateRelease}}
+            </div>
 
 
-        <div class="fieldform">
-            <p class="titlefield">ISBN:</p>
-            {{form.isbn}}
-        </div>
+            <div class="fieldform">
+                <p class="titlefield">ISBN:</p>
+                {{form.isbn}}
+            </div>
 
 
-        <div class="fieldform">
-            <p class="titlefield">Autor:</p>
-            {{form.autor}}
-        </div>
+            <div class="fieldform">
+                <p class="titlefield">Autor:</p>
+                {{form.autor}}
+            </div>
 
-        <input type="submit" name="" value="Inserir" id="senddata">
+            <input type="submit" name="" value="Inserir" id="senddata">
 
-    </form>
+        </form>
 
+    </section>
 
-</body>
+{% endblock %}
 </html>

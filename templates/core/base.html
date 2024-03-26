@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     {% load static %}
     <meta charset="UTF-8">
@@ -12,8 +12,15 @@
 </head>
 <body>
 
+    <div id="topbarpink"></div>
     <nav id="navigationbartop">
-        <p>fddfssdf</p>
+        <img id="logoimg" src="{% static '/core/images/logotxt.svg' %}" />
+        <div id="spacecenter"></div>
+        <div id="options">
+            <button onclick="location.href='/search'" class="btnstop">Pesquisar Livro</button>
+            <button onclick="location.href='/insert'" class="btnstop">Adicionar Livro</button>
+            <button onclick="location.href='/accounts/logout'" id="sair" class="btnstop">Sair</button>
+        </div>
     </nav>
 
     {% block content %}

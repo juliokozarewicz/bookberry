@@ -1,30 +1,3 @@
-#logoimg {
-	margin-top: 8vh;
-
-	width: 12vh;
-	height: 12vh;
-}
-
-#addmore {
-	margin-top: 2vh;
-
-	width: 25vh;
-	height: 4vh;
-
-	background-color: var(--green);
-
-	border: none;
-	border-radius: 3vh;
-	cursor: pointer;
-
-	font-family: title;
-	font-size: 2.5vh;
-}
-
-#addmore:hover {
-	opacity: 80%;
-}
-
 #register {
 	margin-top: 2vh;
 	all: initial;
@@ -45,30 +18,41 @@
 }
 
 #inputsearch {
-	margin-top: 8vh;
+	margin-top: 2vh;
 
-	width: 70vh;
-	height: 5vh;
+	width: 100%;
+	height: 7vh;
 
-	background-color: none;
+	background-color: var(--gray2);
 
 	padding-left: 2vh;
 	padding-right: 2vh;
 
 	font-family: title;
-	font-size: 2.8vh;
+	font-size: 2.5vh;
 
-	border-radius: 2vh;
+	border-radius: 1vh;
 }
 
 #textbbok {
-	margin-top: 10vh;
+	width: 100%;
+	height: 7vh;
+
+	margin-top: 15vh;
 	font-family: title;
 	font-size: 2.5vh;
+
+	background-color: var(--green);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	border-radius: 1vh;
 }
 
 #frameallbooks {
-	margin-top: 5vh;
+	margin-top: 8vh;
 	margin-bottom: 10vh;
 	width: 100%;
 	flex: 1;
@@ -100,7 +84,7 @@
 }
 
 #framcontent {
-	margin-top: 2vh;
+	margin-top: 3vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -122,4 +106,10 @@
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+section{ 
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }

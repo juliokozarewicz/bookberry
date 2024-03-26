@@ -24,6 +24,7 @@ class search(CreateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['search_list'] = booksDataBase.objects.filter(user=self.request.user).order_by('bookname')
+        context['total_books'] = len(booksDataBase.objects.filter(user=self.request.user).order_by('bookname'))
         return context
 
     def get_queryset(self):
