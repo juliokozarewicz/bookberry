@@ -1,19 +1,22 @@
+{% extends 'core/base.html' %}
 <!DOCTYPE html>
 <html lang="pt">
 <head>
+    {% block htmlhead %}
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static '/core/css/search.css' %}">
     <title>[ Bookberry]  - Buscar Livro</title>
+    {% endblock htmlhead %}
 </head>
-<body>
 
+{% block content %}
     <div id="pinkbar"></div>
 
     <img id="logoimg" src="{% static '/core/images/logo.svg' %}" />
 
-    <button id="addmore">Adicionar Livro</button>
+    <button onclick="location.href='/insert'" id="addmore">Adicionar Livro</button>
 
     <input type="text" id="inputsearch" placeholder="Pesquisar (nome, data de lançamento, ISBN ou autor)" >
 
@@ -28,91 +31,15 @@
             <div>Autor</div>
         </div>
 
+        {% for book in search_list %}
+            <div class="searchclass" id="framcontent">
+                <p>{{book.bookname}}</p>
+                <p>{{book.dateRelease}}</p>
+                <p>{{book.isbn}}</p>
+                <p>{{book.autor}}</p>
+            </div>
+        {% endfor %}
 
-
-        <div class="searchclass" id="framcontent">
-            <p>Nodfg re dfgme</p>
-            <p>01-3-2022</p>
-            <p>23423432432432</p>
-            <p>werwer wer wer werwer</p>
-        </div>
-        
-        <div class="searchclass" id="framcontent">
-            <p>Nodfg re dfgme</p>
-            <p>01-3-2022</p>
-            <p>22222</p>
-            <p>werwer wer wer werwer</p>
-        </div>
-
-        <div class="searchclass" id="framcontent">
-            <p>Nodfg re dfgme</p>
-            <p>01-3-2022</p>
-            <p>23423432432432</p>
-            <p>werwer wer wer werwer</p>
-        </div>
-
-        <div class="searchclass" id="framcontent">
-            <p>Nodfg re dfgme</p>
-            <p>01-3-2022</p>
-            <p>23423432432432</p>
-            <p>werwer wer wer werwer</p>
-        </div>
-
-        <div class="searchclass" id="framcontent">
-            <p>Nodfg re dfgme</p>
-            <p>01-3-2022</p>
-            <p>23423432432432</p>
-            <p>werwer wer wer werwer</p>
-        </div>
-
-        <div class="searchclass" id="framcontent">
-            <p>Nodfg re dfgme</p>
-            <p>01-3-2022</p>
-            <p>23423432432432</p>
-            <p>werwer wer wer werwer</p>
-        </div>
-
-        <div class="searchclass" id="framcontent">
-            <p>Julio Kozarewicz</p>
-            <p>01-3-2029</p>
-            <p>11111</p>
-            <p>xxx</p>
-        </div>
-
-        <div class="searchclass" id="framcontent">
-            <p>Julio Kozarewicz</p>
-            <p>01-3-2029</p>
-            <p>11111</p>
-            <p>xxx</p>
-        </div>
-
-        <div class="searchclass" id="framcontent">
-            <p>Nodfg re dfgme</p>
-            <p>01-3-2022</p>
-            <p>23423432432432</p>
-            <p>werwer wer wer werwer</p>
-        </div>
-
-        <div class="searchclass" id="framcontent">
-            <p>Nodfg re dfgme</p>
-            <p>01-3-2022</p>
-            <p>23423432432432</p>
-            <p>werwer wer wer werwer</p>
-        </div>
-
-        <div class="searchclass" id="framcontent">
-            <p>Nodfg re dfgme</p>
-            <p>01-3-2022</p>
-            <p>23423432432432</p>
-            <p>werwer wer wer werwer</p>
-        </div>
-
-
-
-
-
-
-    
     </div>
 
     <script>
@@ -138,6 +65,6 @@
 
         setupTextFilter('inputsearch', 'searchclass');
     </script>
+{% endblock %}
 
-</body>
 </html>

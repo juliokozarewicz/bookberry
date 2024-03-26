@@ -12,4 +12,4 @@ class booksDataBase(models.Model):
 
     # Form is ok
     def get_absolute_url(self):
-        return reverse('core:home')
+        return reverse('core:search')

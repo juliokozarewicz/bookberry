@@ -13,30 +13,37 @@
 
     <img id="logoimg" src="{% static '/core/images/logo.svg' %}" />
 
-    <button id="addmore">Pesquisar Livro</button>
+    <button onclick="location.href='/search'" id="addmore">Pesquisar Livro</button>
 
-    <p id="textbbok">Acervo de livros</p>
-
-    <form action="{% url 'core:insert' %}" method="post">
+    <form action="{% url 'core:insert' %}" method="post" id="forminsert">
         {% csrf_token %}
+        
+        <p id="textbbok">Inserir Livro no Acervo</p>
 
         <div class="fieldform">
+            <p class="titlefield">Nome do Livro:</p>
             {{form.bookname}}
         </div>
 
+
         <div class="fieldform">
+            <p class="titlefield">Data de lançamento:</p>
             {{form.dateRelease}}
         </div>
 
+
         <div class="fieldform">
+            <p class="titlefield">ISBN:</p>
             {{form.isbn}}
         </div>
 
+
         <div class="fieldform">
+            <p class="titlefield">Autor:</p>
             {{form.autor}}
         </div>
 
-        <input type="submit" name="" value="Inserir" id="">
+        <input type="submit" name="" value="Inserir" id="senddata">
 
     </form>
 

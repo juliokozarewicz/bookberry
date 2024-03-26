@@ -7,7 +7,7 @@ class insertBook(forms.ModelForm):
         model = booksDataBase
 
         widgets = {
-            'dateRelease': forms.DateInput(format='%Y-%m-%d', attrs={'type': 'date'}),
+            'dateRelease': forms.DateInput(format='%Y-%m-%d', attrs={'type': 'date', 'class': 'datex'}),
             'bookname': forms.TextInput(attrs={'placeholder': 'Insira o nome do livro'}),
             'isbn': forms.TextInput(attrs={'placeholder': 'Insira o ISBN'}),
             'autor': forms.TextInput(attrs={'placeholder': 'Insira o nome do autor'}),

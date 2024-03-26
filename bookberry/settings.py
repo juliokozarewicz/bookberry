@@ -159,7 +159,7 @@ TEMPLATES = [
 # allauth
 # ----------------------------------------------------------------------------
 LOGOUT_REDIRECT_URL = '/'
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/search'
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
