@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/core/css/insert.css' %}">
+    <title>[ Bookberry]  - Inserir Livro</title>
+</head>
+<body>
+
+    <div id="pinkbar"></div>
+
+    <img id="logoimg" src="{% static '/core/images/logo.svg' %}" />
+
+    <button id="addmore">Pesquisar Livro</button>
+
+    <p id="textbbok">Acervo de livros</p>
+
+    <form action="{% url 'core:insert' %}" method="post">
+        {% csrf_token %}
+
+        <div class="fieldform">
+            {{form.bookname}}
+        </div>
+
+        <div class="fieldform">
+            {{form.dateRelease}}
+        </div>
+
+        <div class="fieldform">
+            {{form.isbn}}
+        </div>
+
+        <div class="fieldform">
+            {{form.autor}}
+        </div>
+
+        <input type="submit" name="" value="Inserir" id="">
+
+    </form>
+
+
+</body>
+</html>
