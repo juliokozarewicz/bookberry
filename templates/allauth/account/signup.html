@@ -92,9 +92,9 @@
                     </div>
                 {% endif %}
             {% endfor %}
-    
+
         {% endif %}
-            
+
         {% if form.errors %}
             {% for error in form.non_field_errors %}
                 <div id="{{ error }}" class="classerror" onclick="new unloadPage('{{ error }}')">
@@ -102,7 +102,7 @@
                     <p onclick="new unloadPage('{{ error }}')" id="closeerror">x</p>
                 </div>
             {% endfor %}
-    
+
             {% for field in form %}
                 {% for error in field.errors %}
                     <div id="{{ field.auto_id }}" class="classerror" onclick="new unloadPage('{{ field.auto_id }}')">
