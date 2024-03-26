@@ -34,7 +34,7 @@ form {
     font-family: title;
 }
 
-body > div:nth-child(2) > form:nth-child(2) > p {
+body > div:nth-child(2) > form:nth-child(3) > p {
     margin-top: 2vh;
 
     display: flex;
@@ -90,7 +90,7 @@ button[type="submit"] {
     align-items: center;
     justify-content: center;
 
-    margin-top: 2vh;
+    margin-top: 4vh;
 }
 
 button[type="submit"]:hover {
@@ -108,7 +108,7 @@ button[type="submit"]:hover {
     position: relative;
 
     height: 20vh;
-    margin-bottom: 5vh;
+    margin-bottom: 0vh;
 }
 
 #textsingup > a:nth-child(1) {
@@ -118,9 +118,40 @@ button[type="submit"]:hover {
     color: var(--pink);
 }
 
+body > div:nth-child(1) > form:nth-child(3) > ul:nth-child(5) {
+    display: none;
+}
+
+body > div:nth-child(2) > form:nth-child(3) > p:nth-child(7),
+body > div:nth-child(2) > form:nth-child(3) > p:nth-child(7) > label:nth-child(1) {
+    margin-top: 0vh;
+}
+
+body > div:nth-child(1) > form:nth-child(3) > p:nth-child(3) {
+    display: none;
+}
+
+body > div:nth-child(2) > h1:nth-child(2) {
+    font-family: title;
+    font-size: 3vh;
+    margin-bottom: 2vh;
+    display: none;
+}
+
+.errorlist,
+body > div:nth-child(2) > form:nth-child(3) > ul:nth-child(5),
+body > div:nth-child(2) > form:nth-child(3) > p:nth-child(3),
+body > div:nth-child(2) > form:nth-child(3) > ul:nth-child(6) {
+    display: none;
+}
+
+body > div:nth-child(1) > form:nth-child(3) > ul:nth-child(6) {
+    display: none;
+}
+
 #pinkbar {
 	position: absolute;
-	top: 0;
+	top: -1vh;
 
 	width: 100%;
 	height: 4vh;
@@ -128,6 +159,6 @@ button[type="submit"]:hover {
 	background-color: var(--pink);
 }
 
-.errorlist, .errorlist > li {
-    display: none;
+* {
+    margin-top: 0vh;
 }

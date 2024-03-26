@@ -1,6 +1,8 @@
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/core/css/cadastrar.css' %}">
     <title>Entrar</title>
     <style>
 
@@ -34,16 +36,15 @@
 
 {% block content %}
 
-<div style="width: 100%; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-    <h1 style="font-size: 3vh;"> DESCULPE, NÃO DEU TEMPO DE ESTILIZAR </h1>
-    <h3>--------------------------------------------------------------</h3>
+<div id="pinkbar"></div>
+
+<div style="width: 100%; height: 90vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+
+    <img id="logoimglogin" src="{% static '/core/images/logo.svg' %}" />
 
     {% element h1 %}
         {% trans "Cadastre-se" %}
     {% endelement %}
-    <p>
-        {% blocktrans %}Já possui uma conta? <a href="{{ login_url }}">entrar</a>.{% endblocktrans %}
-    </p>
     {% url 'account_signup' as action_url %}
     {% element form form=form method="post" action=action_url tags="entrance,signup" %}
         {% slot body %}
@@ -58,12 +59,15 @@
         {% endslot %}
         {% slot actions %}
             {% element button tags="prominent,signup" type="submit" %}
-                {% trans "Sign Up" %}
+                {% trans "Cadastrar" %}
             {% endelement %}
         {% endslot %}
     {% endelement %}
     {% if SOCIALACCOUNT_ENABLED %}
         {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
     {% endif %}
+
+    <p id="textsingup">
+        {% blocktrans %}Já possui uma conta? <a href="{{ login_url }}"> Entrar</a>.{% endblocktrans %}
+    </p>
 {% endblock content %}
-<h3>--------------------------------------------------------------</h3>
