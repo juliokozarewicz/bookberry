@@ -1,5 +1,8 @@
 # Bookberry - Sistema de Gerenciamento de Acervo de Livros
 
+<img src="1_utils/2_imgs_readme/1.jpg"> <br /> <br />
+<img src="1_utils/2_imgs_readme/2.jpg"> <br /> <br />
+
 ## Descrição
 Bookberry é uma aplicação web desenvolvida em Python com o framework Django, projetada para facilitar o gerenciamento de um acervo de livros. Com Bookberry, você pode pesquisar, inserir, visualizar, deletar e editar informações sobre livros de forma eficiente e organizada.
 
@@ -42,6 +45,10 @@ python manage.py runserver
 ```
 
 Acesse a aplicação em seu navegador, geralmente disponível em [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
+
+<img src="1_utils/2_imgs_readme/3.jpg"> <br /> <br />
+<img src="1_utils/2_imgs_readme/4.jpg"> <br /> <br />
+<img src="1_utils/2_imgs_readme/5.jpg"> <br /> <br />
 
 ## Contribuindo
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests com melhorias, correções de bugs ou novas funcionalidades que você gostaria de ver implementadas.
