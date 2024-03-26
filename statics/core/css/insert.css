@@ -84,6 +84,7 @@
 }
 
 #forminsert {
+	z-index: 30;
 	width: 50vh;
 
 	margin-top: 30vh;
@@ -152,4 +153,10 @@ section {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+#svgwave {
+	z-index: 2;
+	position: absolute;
+	bottom: 0vh;
 }
