@@ -15,14 +15,18 @@
 
     <section>
 
-    <p id="textbbok">Olá, {{ user.username }}! O seu acervo possui um total de {{total_books}} livros.</p>
+    <div id="bannerframe">
+        <img id="bannerimg" src="{% static '/core/images/banner.svg' %}" />
+        <p id="textbbok">Olá, {{ user.username }}! </p>
+        <p id="textbbok2">O seu acervo possui um total de {{total_books}} livros.</p>
+    </div>
 
     <input type="text" id="inputsearch" placeholder="Pesquisar (nome, data de lançamento, ISBN ou autor)" >
 
     <div id="frameallbooks">
-        
+
         <div id="framecab">
-            <div>Nome</div>
+            <div>Livro</div>
             <div>Lançamento</div>
             <div>ISBN</div>
             <div>Autor</div>
