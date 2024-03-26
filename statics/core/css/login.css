@@ -131,3 +131,27 @@ button[type="submit"]:hover {
 .errorlist, .errorlist > li {
     display: none;
 }
+
+/* ##### */
+/* other devices */
+@media (max-width: 950px) {
+
+    #textsingup{
+        position: absolute;
+        bottom: 5vh;
+        font-family: title;
+        font-size: 1.5vh;
+
+        max-width: 35vh;
+
+        text-align: center;
+    }
+
+    #textsingup > a:nth-child(1) {
+        font-family: title;
+        font-size: 1.5vh;
+    
+        color: var(--pink);
+    }
+
+}
