@@ -30,6 +30,7 @@
             <div>Lançamento</div>
             <div>ISBN</div>
             <div>Autor</div>
+            <img style="visibility: hidden ;opacity: 0%;" id="deleteimg" src="{% static '/core/images/delete.svg' %}" />
         </div>
 
         {% for book in search_list %}
@@ -38,6 +39,12 @@
                 <p>{{book.dateRelease}}</p>
                 <p>{{book.isbn}}</p>
                 <p>{{book.autor}}</p>
+
+                <form id="deleteForm{{ book.pk }}" action="{% url 'core:delete' pk=book.pk %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <img id="deleteimg" src="{% static '/core/images/delete.svg' %}" onclick="submitForm('{{ book.pk }}')" />
+                </form>
+                
             </div>
         {% endfor %}
 
@@ -66,6 +73,11 @@
         }
 
         setupTextFilter('inputsearch', 'searchclass');
+
+        function submitForm(pk) {
+            document.getElementById('deleteForm' + pk).submit();
+        }
+
     </script>
 {% endblock %}
 

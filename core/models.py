@@ -10,6 +10,9 @@ class booksDataBase(models.Model):
     isbn = models.CharField(max_length=250)
     autor = models.CharField(max_length=250)
 
+    def get_absolute_url_delete(self):
+        return reverse('core:delete', args=[self.pk])
+
     # Form is ok
     def get_absolute_url(self):
         return reverse('core:search')

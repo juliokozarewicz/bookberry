@@ -1,17 +1,14 @@
 from django.shortcuts import render
 from .models import booksDataBase
 from.forms import insertBook
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, DeleteView
+from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
 
 def home(request):
     template_name='core/home.html'
-    return render(request, template_name)
-
-def search(request):
-    template_name='core/search.html'
     return render(request, template_name)
 
 @method_decorator(login_required, name='dispatch')
@@ -42,3 +39,9 @@ class insert(CreateView):
         obj.user = self.request.user
         obj.save()
         return super().form_valid(form)
+
+@method_decorator(login_required, name='dispatch')
+class delete(DeleteView):
+    model = booksDataBase
+    success_url = reverse_lazy('core:search')
+    template_name = 'core/search.html'
