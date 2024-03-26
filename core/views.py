@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import booksDataBase
 from.forms import insertBook
-from django.views.generic.edit import CreateView, DeleteView
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
@@ -45,3 +45,16 @@ class delete(DeleteView):
     model = booksDataBase
     success_url = reverse_lazy('core:search')
     template_name = 'core/search.html'
+
+@method_decorator(login_required, name='dispatch')
+class edit(UpdateView):
+    model = booksDataBase
+    form_class = insertBook
+    template_name = 'core/edit.html'
+    context_object_name = 'edit'
+
+    def form_valid(self, form):
+        obj = form.save(commit=False)
+        obj.user = self.request.user
+        obj.save()
+        return super().form_valid(form)

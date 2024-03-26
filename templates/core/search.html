@@ -30,6 +30,7 @@
             <div>Lançamento</div>
             <div>ISBN</div>
             <div>Autor</div>
+            <img style="visibility: hidden ;opacity: 0%;" id="deleteimg" src="{% static '/core/images/edit.svg' %}" onclick="" />
             <img style="visibility: hidden ;opacity: 0%;" id="deleteimg" src="{% static '/core/images/delete.svg' %}" />
         </div>
 
@@ -39,6 +40,8 @@
                 <p>{{book.dateRelease}}</p>
                 <p>{{book.isbn}}</p>
                 <p>{{book.autor}}</p>
+
+                <img id="deleteimg" src="{% static '/core/images/edit.svg' %}" onclick="location.href='/edit/{{book.pk}}'" />
 
                 <form id="deleteForm{{ book.pk }}" action="{% url 'core:delete' pk=book.pk %}" method="post" style="display: inline;">
                     {% csrf_token %}
