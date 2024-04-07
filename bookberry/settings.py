@@ -48,6 +48,8 @@ INSTALLED_APPS = [
 
     # myapps
 	'core',
+    'api',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -70,13 +72,9 @@ WSGI_APPLICATION = 'bookberry.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-
-    'default': { 
-        'ENGINE': config('DB_ENGINE'),
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'PORT': config('DB_PORT'),
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -168,3 +166,11 @@ AUTHENTICATION_BACKENDS = [
 
 ACCOUNT_LOGOUT_ON_GET = True
 # ----------------------------------------------------------------------------
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        #'rest_framework.authentication.TokenAuthentication',  # Se desejar também usar tokens
+        'rest_framework.authentication.BasicAuthentication',  # Adicione BasicAuthentication para permitir autenticação por usuário/senha
+    ),
+}

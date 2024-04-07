@@ -4,12 +4,13 @@
 <img src="1_utils/2_imgs_readme/2.jpg"> <br /> <br />
 
 ## Descrição
-Bookberry é uma aplicação web desenvolvida em Python com o framework Django, projetada para facilitar o gerenciamento de um acervo de livros. Com Bookberry, você pode pesquisar, inserir, visualizar, deletar e editar informações sobre livros de forma eficiente e organizada.
+Bookberry é uma aplicação web desenvolvida em Python com o framework Django, projetada para facilitar o gerenciamento de um acervo de livros. Com Bookberry, você pode pesquisar, inserir, visualizar, deletar e editar informações sobre livros de forma eficiente e organizada. Também, o Bookberry possui uma API para desenvolvedores, isso permite o desenvolvimento de sistemas que irão utilizar o core do Bookberry como base.
 
 ## Tecnologias Utilizadas
 - Python
 - Django
-- PostgreSQL
+- Django Rest Framework
+- SQLITE
 
 ## Funcionalidades Principais
 - **Pesquisa:** Encontre rapidamente livros utilizando a função de pesquisa.
@@ -17,6 +18,9 @@ Bookberry é uma aplicação web desenvolvida em Python com o framework Django, 
 - **Visualização:** Veja detalhes completos sobre os livros armazenados.
 - **Deleção:** Remova livros do acervo quando necessário.
 - **Edição:** Atualize as informações dos livros conforme necessário.
+
+## API
+No caminho: '/api/' encontra-se a API para acesso aos dados do usuário, requer autentificação.
 
 ## Requisitos de Instalação
 Certifique-se de ter o Python e o PostgreSQL instalados em seu sistema antes de prosseguir.
@@ -36,10 +40,10 @@ Certifique-se de ter o Python e o PostgreSQL instalados em seu sistema antes de 
 4. Configure as variáveis de ambiente para conexão com o banco de dados PostgreSQL.
 
 ## Configuração do Banco de Dados
-Certifique-se de configurar corretamente o banco de dados PostgreSQL antes de executar o aplicativo. Você pode fazer isso atualizando as configurações do banco de dados no arquivo `.env`.
+Certifique-se de configurar corretamente o banco de dados fazendo as migrações.
 
 ## Executando a Aplicação
-Após concluir a configuração do banco de dados e fazer as migrações, você pode iniciar a aplicação Django usando o seguinte comando:
+Você pode iniciar a aplicação Django usando o seguinte comando:
 ```
 python manage.py runserver
 ```
