@@ -20,11 +20,19 @@ Bookberry é uma aplicação web desenvolvida em Python com o framework Django, 
 - **Edição:** Atualize as informações dos livros conforme necessário.
 
 ## API
-No caminho: '/api/' encontra-se a API para acesso aos dados do usuário, requer autentificação.
+Bookberry possui uma API para acesso aos dados do usuário, requer autentificação por token.
+Endpoints da api:
+Acesso principal: '/api'
+Alteração, deleção e similares: '/api/<id>'
+Geração de token (requer login): '/api-token'
+Atualização de token: '/api-token/refresh/'
+
+
+'api-token/refresh/'
 <img src="1_utils/2_imgs_readme/6.png"> <br /> <br />
 
 ## Requisitos de Instalação
-Certifique-se de ter o Python e o PostgreSQL instalados em seu sistema antes de prosseguir.
+Certifique-se de ter o Python instalado em seu sistema antes de prosseguir.
 
 1. Clone o repositório do GitHub:
     ```

@@ -167,10 +167,11 @@ AUTHENTICATION_BACKENDS = [
 ACCOUNT_LOGOUT_ON_GET = True
 # ----------------------------------------------------------------------------
 
+# Api rest auth
+# ----------------------------------------------------------------------------
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.SessionAuthentication',
-        #'rest_framework.authentication.TokenAuthentication',  # Se desejar também usar tokens
-        'rest_framework.authentication.BasicAuthentication',  # Adicione BasicAuthentication para permitir autenticação por usuário/senha
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
 }
+# ----------------------------------------------------------------------------
