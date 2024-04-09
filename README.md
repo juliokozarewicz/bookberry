@@ -23,7 +23,9 @@ Bookberry é uma aplicação web desenvolvida em Python com o framework Django, 
 Bookberry possui uma API para acesso aos dados do usuário, requer autentificação por token. <br/>
 Endpoints da api: <br/>
 Acesso principal: '/api' <br/>
-Alteração, deleção e similares: '/api/<id>' <br/>
+GET /api/users/\<id\>: Retorna as informações do usuário com o ID especificado. <br/>
+PUT /api/users/\<id\>: Atualiza as informações do usuário com o ID especificado. <br/>
+DELETE /api/users/\<id\>: Deleta o usuário com o ID especificado. <br/>
 Geração de token (requer login): '/api-token' <br/>
 Atualização de token: '/api-token/refresh/' <br/>
 
